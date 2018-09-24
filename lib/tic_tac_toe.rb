@@ -11,36 +11,63 @@ module TicTacToe
       @matrix = Array.new(@size) { Array.new(@size) }
       @win_with = @size > 3 ? 4 : 3
       @turn = 'X'
+      @turn_max = @size * @size
+      @turn_played = 0
       @winner = nil
     end
 
     # Method that start the game, the first player is "X"
     # receives coordinates x and y
     def play_game(x, y)
+
       if fill_matrix(x, y, @turn)
+
         if is_win(x, y, @turn)
           @winner = @turn
           return true
         end
+
         change_turn
+
+        if full_board?
+          puts 'Game Over'
+          @winner = nil
+          return true
+        end
+
       else
         puts 'The coordinate dont exist or already has dates, choose other'
       end
+
       false
     end
 
-    # Print Matrix
-    def print_matrix
-      (0..@matrix.length).each {|i| print "#{matrix[i]} \n"}
+    # Return if board is full
+    def full_board?
+      (@turn_played >= @turn_max) ? true : false
     end
-
-    private
 
     # Change turn "x" to "o" and vice versa
     def change_turn
       @turn = @turn == 'X' ? 'O' : 'X'
+      @turn_played += 1
     end
 
+    def reset(size = @size)
+      @size = size < 3 ? 3 : size
+      @turn_count = @size * @size
+      @turn_played = 0
+      @matrix = Array.new(@size) { Array.new(@size) }
+      @win_with = @size > 3 ? 4 : 3
+      @winner = nil
+    end
+
+    # Print Matrix
+    def print_matrix
+      (0..@matrix.length).each { |i| print "#{matrix[i]} \n"}
+    end
+
+    private
     # fill matrix by coordinates (x,y). accept data if cell is null and exist
     def fill_matrix(x, y, data)
       if validate_xy(x, y) && @matrix[y][x].nil?

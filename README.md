@@ -1,8 +1,14 @@
 # TicTacToe
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/tic_tac_toe`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to gem Tic Tac Toe. This gem contain the logic of the game Tic Tac Toe, with it you can create terminal game Tic Tac Toe in an easy and fast way.
 
-TODO: Delete this and the text above, and describe your gem
+## Rules
+
+1. Two players represented with X and O
+2. First time the game is played, X starts
+3. Each player alternate turns to put a mark in the board on any available slot
+4. The game ends when either one of the players matches three marks in a horizontal, vertical or diagonal row or there are no more moves available
+5. Once the game finishes, players are asked if they want to play again. If they do, the player who lost the previous match starts. In case of a draw, the player who did the second-to-last movement starts
 
 ## Installation
 
@@ -28,41 +34,51 @@ require 'tic_tac_toe'
 
 system('cls')
 puts "How many rows and cols do you want the board to have? (3 or more)"
-# Get size of the matrix (Board of game with rang 3-10)
+#Get size of the matrix (Board of game)
 size  = gets.chomp.to_i
-# We instance te class Game and set size
+# We instance the class Game and set size of the matrix
 game = TicTacToe::Game.new(size)
+# We declare x and y
 x=0
 y=0
 
 begin
+  # Print the matrix (board) [first all are nil].
+  #
+  # We can use the gem Interface::Board and the method .create_board(Array)
+  # to print the board prettier but you'll need install the game "Interface"
+  # more info here: https://github.com/LuisOzParr/Console_Interface 
   game.print_matrix
+
+  #We ask the player to enter the coordinates x and y. These coordinates is the cell
+  # in the player put her symbol (X or O)
   print "Set coordinate in X: "
   x = gets.chomp.to_i
   print "Set coordinate in Y: "
   y = gets.chomp.to_i
+
+  #clear the screen
   system('cls')
+
+  # Repeat this until game.play_game(x, y) return true
+  # 
+  # play_game(x,y) is the method that implement the logic of this game and check if 
+  # one player win. 
+  # Return true if someone win or the board is full. 
+  # Also save the winner in a property winner.
 end until game.play_game(x, y)
 
 game.print_matrix
+
+# Return winner
 puts "THE WINNER IS PLAYER #{game.winner}"
 
-  
 ```
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/tic_tac_toe. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/LuisOzParr/tic_tac_toe. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
-## Code of Conduct
-
-Everyone interacting in the TicTacToe project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/tic_tac_toe/blob/master/CODE_OF_CONDUCT.md).
