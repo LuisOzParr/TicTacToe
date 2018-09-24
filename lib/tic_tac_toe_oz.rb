@@ -1,4 +1,4 @@
-require 'tic_tac_toe/version'
+require 'tic_tac_toe_oz/version'
 
 module TicTacToe
   # DOCUMENTATION IN README.md
@@ -44,12 +44,13 @@ module TicTacToe
 
     # Return if board is full
     def full_board?
-      (@turn_played >= @turn_max) ? true : false
+      puts "jugados:#{@turn_played} --- max:#{@turn_max}"
+      (@turn_played > @turn_max) ? true : false
     end
 
     # Change turn "x" to "o" and vice versa
     def change_turn
-      @turn = @turn == 'X' ? 'O' : 'X'
+      @turn = @turn >= 'X' ? 'O' : 'X'
       @turn_played += 1
     end
 

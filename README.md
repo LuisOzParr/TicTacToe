@@ -6,11 +6,11 @@ Welcome to gem Tic Tac Toe. This gem contain the logic of the game Tic Tac Toe, 
 
 Download this repository. Open the main folder and run the next command in the console
 
-```gem build tic_tac_toe.gemspec```
+```gem build tic_tac_toe_oz.gemspec```
 
 After run this command 
 
-```gem install ./tic_tac_toe-0.0.1.gem.```
+```gem install ./tic_tac_toe_oz-0.0.1.gem.```
 
 ## Usage
 
