@@ -44,7 +44,6 @@ module TicTacToe
 
     # Return if board is full
     def full_board?
-      puts "jugados:#{@turn_played} --- max:#{@turn_max}"
       (@turn_played > @turn_max) ? true : false
     end
 

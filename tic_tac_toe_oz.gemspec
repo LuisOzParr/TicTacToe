@@ -11,12 +11,11 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Game TicTacToe just logic}
   spec.description   = %q{Logic of game TicTacToe}
-  spec.homepage      = 'https://github.com/LuisOzParr/TicTacToe'
+  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 
-   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
-  end
+  spec.files = Dir["{lib}/**/*.rb", "bin/*", "LICENSE", "*.md"]
+
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
