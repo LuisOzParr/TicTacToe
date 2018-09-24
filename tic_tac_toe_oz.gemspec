@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Game TicTacToe just logic}
   spec.description   = %q{Logic of game TicTacToe}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = 'https://github.com/LuisOzParr/TicTacToe'
   spec.license       = "MIT"
 
   spec.files = Dir["{lib}/**/*.rb", "bin/*", "LICENSE", "*.md"]

@@ -10,7 +10,7 @@ Download this repository. Open the main folder and run the next command in the c
 
 After run this command 
 
-```gem install ./tic_tac_toe_oz-0.0.1.gem.```
+```gem install ./tic_tac_toe_oz-0.0.1.gem```
 
 ## Usage
 
