@@ -2,35 +2,21 @@
 
 Welcome to gem Tic Tac Toe. This gem contain the logic of the game Tic Tac Toe, with it you can create terminal game Tic Tac Toe in an easy and fast way.
 
-## Rules
-
-1. Two players represented with X and O
-2. First time the game is played, X starts
-3. Each player alternate turns to put a mark in the board on any available slot
-4. The game ends when either one of the players matches three marks in a horizontal, vertical or diagonal row or there are no more moves available
-5. Once the game finishes, players are asked if they want to play again. If they do, the player who lost the previous match starts. In case of a draw, the player who did the second-to-last movement starts
-
 ## Installation
 
-Add this line to your application's Gemfile:
+Download this repository. Open the main folder and run the next command in the console
 
-```ruby
-gem 'tic_tac_toe'
-```
+```gem build tic_tac_toe.gemspec```
 
-And then execute:
+After run this command 
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install tic_tac_toe
+```gem install ./tic_tac_toe-0.0.1.gem.```
 
 ## Usage
 
 Example
 ```
-require 'tic_tac_toe'
+require 'tic_tac_toe_oz'
 
 system('cls')
 puts "How many rows and cols do you want the board to have? (3 or more)"
@@ -71,12 +57,12 @@ end until game.play_game(x, y)
 game.print_matrix
 
 # Return winner
-puts "THE WINNER IS PLAYER #{game.winner}"
+puts puts game.winner.nil? ? 'Game Over' : "THE WINNER IS PLAYER #{game.winner}"
 
 ```
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/LuisOzParr/tic_tac_toe. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/LuisOzParr/TicTacToe. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 

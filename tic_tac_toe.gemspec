@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "tic_tac_toe/version"
+require "tic_tac_toe_oz/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "tic_tac_toe"
+  spec.name          = "tic_tac_toe_oz"
   spec.version       = TicTacToe::VERSION
   spec.authors       = ["Luis Ozuna"]
   spec.email         = ["lgozuna@gmail.com"]
 
   spec.summary       = %q{Game TicTacToe just logic}
   spec.description   = %q{Logic of game TicTacToe}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = 'https://github.com/LuisOzParr/TicTacToe'
   spec.license       = "MIT"
 
    spec.files         = `git ls-files -z`.split("\x0").reject do |f|
